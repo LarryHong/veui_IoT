@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>VIMEE</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="base.css">
+    <script type="application/javascript" src="js.js"></script>
+</head>
+<body>
+<header>
+    <h1>VIMEE System</h1>
+</header>
+
+<fieldset>
+    <legend>Light parameters</legend>
+    <form>
+        <p>
+            <em>Automatic shut-off</em>
+            <span class="sw">
+                <label><input type="radio" name="as" value="" checked /><span>Yes</span></label>
+                <label><input type="radio" name="as" value="" /><span>No</span></label>
+            </span>
+        </p>
+        <p>
+            <em>Automatic shut-off</em>
+            <span class="sw">
+                <label><input type="checkbox" name="sw" value="" /><span>Yes</span><i>/</i><span>No</span></label>
+            </span>
+        </p>
+        <p>
+            <em>Timeout (Unit: sec.)</em>
+            <input type="text" name="mqtt_port" value="7200" />
+        </p>
+        <p>
+            <button type="submit">Save</button>
+        </p>
+    </form>
+</fieldset>
+</body>
+</html>

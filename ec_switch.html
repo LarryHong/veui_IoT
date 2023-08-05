@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIMEE UI IoT</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="base.css">
+    <script src="js.js"></script>
+</head>
+<body>
+<header>
+    <h1>VIMEE UI IoT</h1>
+</header>
+
+<fieldset>
+    <legend>Configure Entity Switch</legend>
+    <form method="post" action="?e=7462832_1&amp;a=save">
+        <p><em>Name</em><input type="text" name="name" value="Switch"></p>
+        <p><em>Icon</em><input type="text" name="icon" value="mdi:chandelier"></p>
+        <p><em>Delay closing time (s)</em><input type="text" name="dt" value="10800"></p>
+        <p><em>Default state</em><select name="ds"><option value="0" selected="">OFF</option><option value="1">ON</option></select></p>
+        <p><button type="submit">Submit</button></p>
+    </form>
+</fieldset>
+
+</body>
+</html>

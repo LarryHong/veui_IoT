@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIMEE UI IoT</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="base.css">
+    <script src="js.js"></script>
+</head>
+<body>
+<header>
+    <h1>VIMEE UI IoT</h1>
+</header>
+
+<fieldset>
+    <legend>Switch Demo</legend>
+    <div class="dst">On</div>
+    <p class="bp be">Turn off after 10 minutes</p>
+    <p class="bp"><a class="btn" href="#a=toggle">Toggle</a></p>
+    <p class="co dn"></p>
+    <p class="ct dn"></p>
+</fieldset>
+
+<fieldset>
+    <legend>Light Demo</legend>
+    <div class="dst">0%</div>
+    <p class="bp co"><i class="input-pos"></i></p>
+    <p class="bp ct"><i class="input-pos"></i></p>
+    <p class="bp cl">
+        <input type="range" name="cl" value="100">
+    </p>
+    <p class="bp be">Turn off after 10 seconds</p>
+    <p class="bp"><a class="btn" href="#a=toggle">Toggle</a></p>
+</fieldset>
+
+<fieldset>
+    <legend>Level Demo</legend>
+    <div class="dst">High</div>
+    <p class="bp be">Turn off after 10 seconds</p>
+    <p class="bp gp">
+        <a class="btn" href="#a=low">Low</a>
+        <a class="btn" href="#a=mid">Mid</a>
+        <a class="btn" href="#a=high">High</a>
+    </p>
+    <p class="bp">
+        <a class="btn" href="#a=off">Off</a>
+    </p>
+</fieldset>
+
+<fieldset>
+    <legend>Multiple Switchs Demo</legend>
+    <p class="bp gp-2" style="margin-top: 40px;">
+        <a class="btn" href="#a=toggle&id=0">Switch 1</a>
+        <a class="btn btn-w" href="#a=toggle&id=1">Switch 2</a>
+        <a class="btn btn-w" href="#a=toggle&id=2">Switch 3</a>
+        <a class="btn btn-w" href="#a=toggle&id=3">Switch 4</a>
+    </p>
+</fieldset>
+
+<fieldset>
+    <legend>Sensors Demo</legend>
+    <dl class="bp gp-1">
+        <dt>Temperature</dt>
+        <dd>32<em>°C</em></dd>
+        <dt>Humidity</dt>
+        <dd>53<em>%</em></dd>
+        <dt>PM2.5</dt>
+        <dd>53<em>µg/m³</em></dd>
+        <dt>PM10</dt>
+        <dd>93<em>µg/m³</em></dd>
+    </dl>
+</fieldset>
+
+<fieldset>
+    <legend>Cover1 Demo</legend>
+    <div class="dst">0%</div>
+    <p class="input-range bp">
+        <input type="range" value="0">
+    </p>
+    <p class="bp gp">
+        <a class="btn" href="#a=OPEN"><i class="ic" style="border-right: 16px solid #fff; border-left: 0;">Open</i><i class="ic" style="border-left: 16px solid #fff; border-right: 0;"></i></a>
+        <a class="btn" href="#a=STOP"><i class="ic" style="top: 0; border: 0; background: #fff; width: 16px; height: 16px">Stop</i></a>
+        <a class="btn" href="#a=CLOSE"><i class="ic" style="border-left: 16px solid #fff; border-right: 0;">Close</i><i class="ic" style="border-right: 16px solid #fff; border-left: 0;"></i></a>
+    </p>
+</fieldset>
+
+<fieldset>
+    <legend>Cover2 Demo</legend>
+    <div class="dst">50%</div>
+    <p class="input-range bp">
+        <input type="range" value="50">
+    </p>
+    <p class="bp gp">
+        <a class="btn" href="#a=open"><i class="ic" style="border: 10px solid transparent; border-bottom: 16px solid #fff; border-top: 0;  width: 0; height: 0">Open</i></a>
+        <a class="btn" href="#a=stop"><i class="ic" style="top: 0; border: 0; background: #fff; width: 16px; height: 16px">Stop</i></a>
+        <a class="btn" href="#a=close"><i class="ic" style="border: 10px solid transparent; border-top: 16px solid #fff; border-bottom: 0;  width: 0; height: 0">Close</i></a>
+    </p>
+</fieldset>
+
+</body>
+</html>

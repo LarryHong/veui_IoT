@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIMEE Smart System</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="base.css">
+    <script src="js.js"></script>
+</head>
+<body>
+<header>
+    <h1>VIMEE Smart System</h1>
+</header>
+
+<style>.ic{display:inline-block;overflow:hidden;width:0;height:0;border:10px solid transparent;margin:0 3px;position:relative;top:2px}.input-range{position:relative}.input-range:before,.input-range:after{position:absolute;font-size:12px;top:0}.input-range:before{content:"Close";left:0}.input-range:after{content:"Open";right:0}</style>
+<fieldset id="st">
+    <legend>Curtain Status</legend>
+    <div>100%</div>
+    <p class="input-range"><input type="range" value="100" style="margin: 0"></p>
+    <p class="gp"><a class="btn" href="/set?s=OPEN"><i class="ic" style="border-right: 16px solid #fff; border-left: 0;"></i><i class="ic" style="border-left: 16px solid #fff; border-right: 0;"></i></a><a class="btn" href="/set?s=STOP"><i class="ic" style="top: 0; border: 0; background: #fff; width: 16px; height: 16px"></i></a><a class="btn" href="/set?s=CLOSE"><i class="ic" style="border-left: 16px solid #fff; border-right: 0;"></i><i class="ic" style="border-right: 16px solid #fff; border-left: 0;"></i></a></p>
+</fieldset>
+<script>setInterval(function(){aj("c_st",function(t){ih(qs("#st div"),t.position+"%");qs("#st input").value=t.position})},1000);ag(qs("#st"));ael(qs("#st input"), "change", function(){aj("/c_set?p="+this.value);});</script>
+
+<fieldset class="ls ls-ar">
+    <legend>Menu</legend>
+    <ul><li><a class="it" href="cf">Configuration</a></li><li><a class="it" href="if">Information</a></li><li><a class="it" href="fu">Firmware Upgrade</a></li><li><a class="it" href="ts">Testing</a></li><li><a class="it" href="cl">Console</a></li><li class="le"><a class="it st" href="rs">Restart</a></li></ul>
+    <p><a class="btn btn-w" href="/ex">Exit</a></p>
+</fieldset>
+</body>
+</html>

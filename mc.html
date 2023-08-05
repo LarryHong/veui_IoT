@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIMEE UI IoT</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="base.css">
+    <script src="js.js"></script>
+</head>
+<body>
+<header>
+    <h1>VIMEE UI IoT</h1>
+</header>
+
+<fieldset>
+    <legend>MQTT parameters</legend>
+    <form method="post" action="ms.html">
+        <p><em>Connect</em><span class="sw"><label><input type="radio" name="conn" value="1" checked=""><span>YES</span></label><label><input type="radio" name="conn" value="0"><span>NO</span></label></span></p>
+        <p><em>Server</em><input type="text" name="ser" value="mqtt.honglei.net"></p>
+        <p><em>Port (1883)</em><input type="text" name="port" value="1883"></p>
+        <p><em>User</em><input type="text" name="user" value=""></p>
+        <p><em>Password</em><input type="text" name="pass" value=""></p>
+        <p><em>Client (VIMEE_332816)</em><input type="text" name="client" value="VIMEE_332816"></p>
+        <p><em>Topic Prefix (VIMEE_332816)</em><input type="text" name="tpf" value=""></p>
+        <p><em>Discovery Topic Prefix (homeassistant)</em><input type="text" name="dtpf" value="homeassistant"></p>
+        <p><button type="submit">Submit</button></p>
+    </form>
+</fieldset>
+
+</body>
+</html>

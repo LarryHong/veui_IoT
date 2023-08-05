@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIMEE UI IoT</title>
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="base.css">
+    <script src="js.js"></script>
+</head>
+<body>
+<header>
+    <h1>VIMEE UI IoT</h1>
+</header>
+
+<fieldset id="nws" class="ls">
+    <legend>Wifi networks<a id="scan" href="wl.json">Scan</a></legend>
+    <ul>
+        <div class="tips">Please click Scan.</div>
+    </ul>
+</fieldset>
+
+<fieldset>
+    <legend>Wifi parameters</legend>
+    <form method="post" action="ws.html">
+        <p><em>SSID</em><input type="text" name="ssid" value=""></p>
+        <p><em>Password</em><input type="text" name="pass" value=""></p>
+        <p><em>Hostname (VIMEE_332816)</em><input type="text" name="dn" value=""></p>
+        <p><button type="submit">Submit</button></p>
+    </form>
+</fieldset>
+
+<script>
+ael(qs("#nws ul"),"click",function(e, n){
+    n=e.target;
+    if(n.tagName=="A"){
+        qs("input[name=ssid]").value=n.href.split("#")[1];
+        qs("input[name=pass]").value="";
+        e.preventDefault()
+    }
+});
+function gnl(u,n,h,i){
+    n=qs("#nws ul");
+    ih(n,'<div class="tips">Scanning networks...</div>');
+    aj(u,function(o){
+        if(o.length!=0){
+            h='';
+            for(i in o){
+                h+='<li><a class="it'+(o[i].encryption=="OPEN"?"":" wls")+'" href="#'+o[i].ssid+'">'+o[i].ssid+"<em>"+o[i].quality+"%</em></a></li>"
+            }
+            ih(n,h)
+        }else{
+            ih(n,'<div class="tips">No networks found!</div>')
+        }
+    },
+    function(){
+        ih(n,'<div class="tips">Failed!</div>')
+    })
+};
+ael(qs("#scan"),"click",function(e){
+    e.preventDefault();
+    gnl(this.href)
+});
+</script>
+
+</body>
+</html>
