@@ -22,9 +22,11 @@
 
 <fieldset>
     <legend>Light Demo</legend>
-    <div class="dst">0%</div>
+    <div class="dst">100<em>%</em></div>
     <p class="bp co"><i class="input-pos"></i></p>
-    <p class="bp ct"><i class="input-pos"></i></p>
+    <p class="bp ct">
+        <input type="range" name="ct" value="30">
+    </p>
     <p class="bp cl">
         <input type="range" name="cl" value="100">
     </p>
@@ -60,19 +62,55 @@
     <legend>Sensors Demo</legend>
     <dl class="bp gp-1">
         <dt>Temperature</dt>
-        <dd>32<em>°C</em></dd>
+        <dd><b>32</b><em>°C</em></dd>
         <dt>Humidity</dt>
-        <dd>53<em>%</em></dd>
+        <dd><b>43</b><em>%</em></dd>
         <dt>PM2.5</dt>
-        <dd>53<em>µg/m³</em></dd>
+        <dd><b>53</b><em>µg/m³</em></dd>
         <dt>PM10</dt>
-        <dd>93<em>µg/m³</em></dd>
+        <dd><b>93</b><em>µg/m³</em></dd>
+    </dl>
+</fieldset>
+
+<fieldset>
+    <legend>Mix Demo</legend>
+    <dl class="bp gp-1">
+        <dt>AQI</dt>
+        <dd><b>Good</b></dd>
+        <dt>Temperature</dt>
+        <dd><b>32</b><em>°C</em></dd>
+        <dt>Humidity</dt>
+        <dd><b>43</b><em>%</em></dd>
+        <dt>Switch</dt>
+        <dd><a class="btn-sw" href="#a=switch">Switch</a></dd>
+        <dt>Modules</dt>
+        <dd>
+            <select class="sel-sm">
+                <option>Mode1</option>
+                <option>Mode2</option>
+                <option>Mode3</option>
+            </select>
+        </dd>
+        <dt>In Fan</dt>
+        <dd><input type="range" value="40"></dd>
+        <dt>Out Fan</dt>
+        <dd><input type="range" value="30"></dd>
+        <dt>Hot</dt>
+        <dd><a class="btn-swd" href="#a=hot">Hot</a></dd>
+        <dt>Window</dt>
+        <dd>
+            <span class="btn-cover">
+                <a class="btn" href="#a=open"><i class="ic" style="border: 9px solid transparent; border-bottom: 14px solid #fff; border-top: 0;  width: 0; height: 0">Open</i></a>
+                <a class="btn" href="#a=stop"><i class="ic" style="border: 0; background: #fff; width: 14px; height: 14px">Stop</i></a>
+                <a class="btn" href="#a=close"><i class="ic" style="border: 9px solid transparent; border-top: 14px solid #fff; border-bottom: 0;  width: 0; height: 0">Close</i></a>
+            </span>
+        </dd>
     </dl>
 </fieldset>
 
 <fieldset>
     <legend>Cover1 Demo</legend>
-    <div class="dst">0%</div>
+    <div class="dst">0<em>%</em></div>
     <p class="input-range bp">
         <input type="range" value="0">
     </p>
@@ -85,7 +123,7 @@
 
 <fieldset>
     <legend>Cover2 Demo</legend>
-    <div class="dst">50%</div>
+    <div class="dst">50<em>%</em></div>
     <p class="input-range bp">
         <input type="range" value="50">
     </p>

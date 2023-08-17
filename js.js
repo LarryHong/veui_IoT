@@ -1,27 +1,42 @@
-
+//获取节点
 function qs(i){
     return document.querySelector(i)
 };
+//获取所有节点
 function qsa(i){
     return document.querySelectorAll(i)
 };
+//写入HTML
 function ih(n,h){
     n.innerHTML=h
 };
+//插入HTML
+function ah(n,h){
+    e=document.createElement("div")
+    ih(e,h)
+    console.log(e.childNodes, n)
+    e.childNodes[0].appendChild(n)
+    document.removeChild(e)
+}
+//创建节点
+function ce(t,c,e){
+    e=document.createElement(t)
+    e.innerHTML=c
+    return e
+}
+//写入ClassName
+function co(n,c){
+    n.className=c
+}
+//写入Value
 function val(n,h){
     n.value=h
 };
+//事件监听
 function ael(n,t,f){
     n.addEventListener(t,f)
 };
-function cfm(){
-    qs('.J-cf').onclick=function(e){
-        e.preventDefault();
-        if(confirm(this.getAttribute("data-tips"))){
-            location=this.href
-        }
-    }
-}
+//Ajax
 function aj(u,f,e){
     var x=new XMLHttpRequest();
     x.onreadystatechange=function(){
@@ -39,16 +54,51 @@ function aj(u,f,e){
     };
     x.open('GET',u,true);x.send()
 };
-var ws;
-function sw(){
-    ws=new WebSocket('ws://'+location.hostname+':81/',['arduino']);
-    ws.onmessage=function(e){
-        var v=e.data.split(':');
-        if(wd_fns[v[0]]){
-            wd_fns[v[0]](v[1])
-        }
-    }
+//WebSocket
+var ws,wst,wsu,wsf;
+function wsa(u,f){
+    wsu=u;
+    wsf=f;
+    wsc()
 };
+function wsc(){
+    ws=new WebSocket(wsu);
+    wsi()
+}
+function wsi(){
+    ws.onopen=function(e){
+      ws.send('OPEN')
+    };
+    ws.onclose=function(e){
+      clearInterval(wst)
+      wsc()
+    }
+    // ws.onerror=function(v){
+    //   console.log(v)
+    //   clearInterval(wst)
+    // }
+    ws.onmessage=function(e){
+      console.log(e.data);
+      if(e.data != "PONG"){
+        wsf(eval("("+ e.data +")"));
+      }
+    }
+    //心跳 30s
+    wst = setInterval(function(){
+        ws.send('PING')
+    }, 30000);
+}
+//自动弹出confirm
+function cfm(n){
+    n = n || qs('.J-cf');
+    ael(n, 'click', function(e){
+        e.preventDefault();
+        if(confirm(this.getAttribute("data-tips"))){
+            location=this.href
+        }
+    });
+}
+//自动发送请求
 function ag(n,b){
     n.addEventListener('click',function(e,m,u){
         m=e.target;

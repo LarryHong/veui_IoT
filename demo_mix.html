@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIMEE UI IoT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="base.css">
+    <script src="js.js"></script>
+</head>
+<body>
+<header>
+    <h1>VIMEE UI IoT</h1>
+</header>
+
+<fieldset>
+    <legend>Ventilation System Demo</legend>
+    <dl class="bp gp-1">
+        <dt>AQI</dt>
+        <dd><b>Good</b></dd>
+        <dt>Temperature</dt>
+        <dd><b>32</b><em>°C</em></dd>
+        <dt>Humidity</dt>
+        <dd><b>43</b><em>%</em></dd>
+        <dt>Switch</dt>
+        <dd><a class="btn-sw" href="#a=switch">Switch</a></dd>
+        <dt>Modes</dt>
+        <dd>
+            <select class="sel-sm">
+                <option>Continuous</option>
+                <option>Smart</option>
+                <option>Winter</option>
+            </select>
+        </dd>
+        <dt>In Fan</dt>
+        <dd><input type="range" value="40"></dd>
+        <dt>Out Fan</dt>
+        <dd><input type="range" value="30"></dd>
+        <dt>Hot</dt>
+        <dd><a class="btn-swd" href="#a=hot">Hot</a></dd>
+        <dt>Window</dt>
+        <dd>
+            <span class="btn-cover">
+                <a class="btn" href="#a=open"><i class="ic" style="border: 9px solid transparent; border-bottom: 14px solid #fff; border-top: 0;  width: 0; height: 0">Open</i></a>
+                <a class="btn" href="#a=stop"><i class="ic" style="border: 0; background: #fff; width: 14px; height: 14px">Stop</i></a>
+                <a class="btn" href="#a=close"><i class="ic" style="border: 9px solid transparent; border-top: 14px solid #fff; border-bottom: 0;  width: 0; height: 0">Close</i></a>
+            </span>
+        </dd>
+    </dl>
+</fieldset>
+
+</body>
+</html>

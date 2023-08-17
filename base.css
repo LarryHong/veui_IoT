@@ -47,14 +47,19 @@ form {
 	max-width: 320px
 }
 
+b {
+	font-weight: normal;
+}
+
 em {
 	font-style: normal;
 	font-size: .85em;
 	opacity: .7;
-	font-weight: normal
+	font-weight: normal;
+	margin-left: 5px
 }
 
-input,
+input[type=text],
 select,
 button,
 .btn,
@@ -82,6 +87,7 @@ button,
 }
 
 input[type=range] {
+	width: 100%;
 	-webkit-appearance: none;
 	background: none;
 	padding: 0;
@@ -91,7 +97,7 @@ input[type=range]:focus {
 }
 input[type='range']::-webkit-slider-runnable-track {
 	background-color: #eee;
-	height: 14px;
+	height: 10px;
 	border-radius: 8px;
 }
 input[type='range']::-webkit-slider-thumb {
@@ -99,7 +105,7 @@ input[type='range']::-webkit-slider-thumb {
 	height: 20px;
 	width: 20px;
 	border-radius: 10px;
-	margin-top: -3px;
+	margin-top: -5px;
 	background: #00979d;
 	cursor: pointer;
 }
@@ -128,6 +134,44 @@ form .ip {
 	color: #aaa;
 	overflow: hidden;
 	width: 100%
+}
+
+.btn-sw,
+.btn-swd {
+	position: relative;
+	display: inline-block;
+	height: 20px;
+	width: 36px;
+	overflow: hidden;
+	text-indent: 99px;
+	border: 2px solid #00979d;
+	background: #00979d;
+	border-radius: 12px;
+}
+.btn-sw::after,
+.btn-swd::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	border-radius: 10px;
+	background: #fff;
+}
+.btn-swd {
+	border-color: #ddd;
+	background:#ddd
+}
+.btn-sw::after {
+	right: 0;
+}
+.btn-swd::after {
+	left: 0;
+}
+.sel-sm {
+	width: auto;
+	height: 24px;
+	font-size: 18px;
 }
 
 fieldset {
@@ -175,6 +219,11 @@ dd {
 	border-bottom: 1px solid #bbb;
 	padding: 10px 10px 10px 20px;
 	text-align: right
+}
+
+dd input[type=range] {
+	height: auto;
+	width: 180px;
 }
 
 .dn {
@@ -325,15 +374,34 @@ dl.gp-1 {
 }
 dl.gp-1 dt {
     margin: 10px;
+	line-height: 24px;
 }
 dl.gp-1 dd {
-    margin-top: -40px;
+    margin-top: -44px;
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+}
+
+.btn-cover .btn {
+	display: inline-block;
+	width: 45px;
+	height: 24px;
+	box-shadow: none;
+}
+
+.btn-cover .btn i {
+	top: -8px;
 }
 
 .dst {
 	text-align: center;
 	margin: 20px;
 	font-size: 48px
+}
+
+.dst em {
+	font-size: 24px;
 }
 
 .tips {
@@ -367,33 +435,12 @@ dl.gp-1 dd {
 	background: linear-gradient(to top, rgba(255, 255, 255, .98), transparent)
 }
 
-.ct {
-	width: 300px;
-	height: 16px;
-	overflow: hidden;
-	position: relative
-}
-
 .cl input::-webkit-slider-runnable-track {
     background: linear-gradient(to left, #ccdcff, #fff)
 }
 
-.ct:before,
-.ct:after {
-	position: absolute;
-	content: "";
-	transform: rotate(-2.9deg);
-	transform-origin: 0 15px;
-	display: block;
-	width: 300px;
-	height: 15px;
-	background: linear-gradient(to right, #ff942a, #fff)
-}
-
-.ct:after {
-	bottom: 0;
-	transform-origin: 300px 15px;
-	background: linear-gradient(to left, #ccdcff, #fff)
+.ct input::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #ff942a, #fff, #ccdcff)
 }
 
 .input-pos {
@@ -409,24 +456,37 @@ dl.gp-1 dd {
     z-index: 99;
 }
 
-.input-range {
+.input-range-oc,
+.input-range-lh {
 	position: relative
 }
 
-.input-range:before,
-.input-range:after {
+.input-range-oc:before,
+.input-range-oc:after,
+.input-range-lh:before,
+.input-range-lh:after {
 	position: absolute;
 	font-size: 12px;
 	top: -2px
 }
 
-.input-range:before {
+.input-range-oc:before {
 	content: "Close";
 	left: 0
 }
 
-.input-range:after {
+.input-range-oc:after {
 	content: "Open";
+	right: 0
+}
+
+.input-range-lh:before {
+	content: "Low";
+	left: 0
+}
+
+.input-range-lh:after {
+	content: "High";
 	right: 0
 }
 
